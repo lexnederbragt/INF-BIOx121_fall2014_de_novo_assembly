@@ -125,7 +125,7 @@ The program will tell you how far it has come, and should finish in a minute or 
 
 In the folder you specified after `-o`, you should now see a new zip file called `cod_read1_fastqc.zip`, and an html file called `cod_read1_fastqc.html` 
 
-Download this zip file to the local hard disk of the PC/Mac you are using, see the instructions on the courser wiki. Open a webbrowser, and, using the menu option ‘Open file’, locate the html file. Alternatively, you could browse the file system and double-click on the file.
+Download the html file to the local hard disk of the PC/Mac you are using, see the instructions on the course wiki. Open a webbrowser, and, using the menu option ‘Open file’, locate the html file. Alternatively, you could browse the file system and double-click on the file.
 
 Study the results.
 
