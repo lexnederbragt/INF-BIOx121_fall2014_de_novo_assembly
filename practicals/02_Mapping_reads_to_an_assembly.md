@@ -2,6 +2,14 @@
 
 We will use `bwa` for mapping. this is the same program you used for the variant calling module. However, we will use a different version of `bwa`, one that is faster and more accurate with reads longer than 100bp. So instead of `bwa` we will use `bwa`
 
+####Set up the environment
+Load the following modules:
+
+```
+module load samtools
+module load bwa
+```
+
 ####Indexing the assembly
 
 Your new assembly now becomes the 'reference' for `bwa`. `bwa` needs an index of the sequences to make mapping go faster. For large genomes such as the human genome, this takes a long time (which is why you were given a indexed reference for the variant calling module). For the small bacterial genome we work with here this is very fast.

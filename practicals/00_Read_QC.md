@@ -18,13 +18,6 @@ This command has one word HERE that you need to change
 
 For example, HERE might be the name of the folder that will contain the output of the command
 
-##Working area
-
-The area to do your ‘work’ and save your files is here:
-
-```
-/home/YOUR_USERNAME
-```
 
 ##Where is what
 
@@ -89,6 +82,9 @@ Followed by the 'enter' key.
 Now, we'll make the new folder and move into it:
 
 ```
+
+
+
 mkdir qc
 cd qc
 pwd
@@ -118,8 +114,10 @@ Currently Loaded Modulefiles:
 To run fastqc on the first file, run the command below; YOUR_USERNAME should be the name you used for your folder. Note that the command should be written on a *single line*. Also note where you should put spaces!
 
 ```
-fastqc -o /home/YOUR_USERNAME/qc /data/qc/cod_read1.fastq
+fastqc -o ./ /data/qc/cod_read1.fastq
 ```
+
+Note that we use '`-o ./`' here, which specifies the current folder '`./`' as location for the output.
 
 The program will tell you how far it has come, and should finish in a minute or so. Check that it finished without error messages.
 
