@@ -19,6 +19,9 @@
 
 * `FastQC` v0.11.2 from [http://www.bioinformatics.babraham.ac.uk/projects/fastqc/](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
+###Assembly puzzle
+Originally developed by Titus Brown, see [http://ivory.idyll.org/blog/the-assembly-exercise.html](http://ivory.idyll.org/blog/the-assembly-exercise.html).
+
 ###De Bruin Graph notebook
 Many thanks to Ben Langmead for making this available as part of teaching material for his computational genomics class. As the code was released under a GNU GPL license, the `DeBruijnGraph.ipynb` IPyhton notebook is also released under the same license.
 Modified from  [http://nbviewer.ipython.org/github/BenLangmead/comp-genomics-class/blob/master/notebooks/CG_deBruijn.ipynb](http://nbviewer.ipython.org/github/BenLangmead/comp-genomics-class/blob/master/notebooks/CG_deBruijn.ipynb)

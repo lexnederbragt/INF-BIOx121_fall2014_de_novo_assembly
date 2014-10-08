@@ -6,6 +6,8 @@ Course material for the *de novo* assembly part of the INF-BIOx121 course at Uni
 ####Thanks to
 * Nick Loman (@pathogenomenick), for the very first edition, see https://github.com/lexnederbragt/denovo-assembly-tutorial, and for making MinION data from the MinION Access Program available 
 * The sequencing companies for access to sequencing data
+* Ben Langmead for the python De Bruijn Graph code
+* Titus Brown for the Assembly Exercise
 
 ####Disclaimer
 The tutorials in this repository only touch on some of the basics of the programs described. For detailed instructions, always consult the individual program's manual.
