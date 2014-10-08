@@ -4,8 +4,6 @@ Spades was written as an assembly program for bacterial genomes, from regular, a
 
 Before assembly, SPADES will error-correct the reads.
 
-NOTE that SPADES is not optimised for scaffolding using mate pairs. 
-
 ###Using SPADES
 
 Spades can be used with paired end and mate pair data:
@@ -89,4 +87,4 @@ Changes to the command line when using error-corrected reads:
 ###Next steps
 As for the previous assemblies, you could map reads back to the assembly, run reapr and visualise in the browser.
 
-**NOTE** please log your results in the spreadsheet at [http://bit.ly/INFBIO2](http://bit.ly/INFBIO2).
+**NOTE** please log your results in the spreadsheet at http://bit.ly/INFBIO2.
