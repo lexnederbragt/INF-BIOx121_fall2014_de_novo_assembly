@@ -84,10 +84,15 @@ In order to have use the final assembly, uncompress the ´polished_assembly.fast
 unzip polished_assembly.fasta.gz
 ```
 
-####A look at the multiple sequence alignment
-
-FIXME
-
 ###Next steps
-As for the previous assemblies, you could map reads back to the assembly, run reapr and visualise in the browser.
+As for the previous assemblies, you could map reads back to the assembly, run reapr and visualise in the browser. Is the assembly error-less?
 
+NOTE reaper will complain about the naming of the sequence(s) in the `polished_assembly.fasta.gz` file. A fix for this is to run this command *BEFORE* running `bwa`:
+
+```
+sed -i 's/|quiver/_quiver/' polished_assembly.fasta
+```
+
+This replaces the `|` symbol with an underscore.
+
+**NOTE** please log your results in the spreadsheet at [http://bit.ly/INFBIO2](http://bit.ly/INFBIO2).

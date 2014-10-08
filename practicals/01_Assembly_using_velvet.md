@@ -22,10 +22,20 @@ Velvet requires an index file to be built before the assembly takes place. We mu
 
 Firstly we are going to run Velvet in single-end mode, *ignoring the pairing information*. Later on we will incorporate this information.
 
-First, 'go home':
+First, we need to make sure we can use velvet:
+
+
+####Set up the environment
+Load the following module:
 
 ```
-cd /home/YOURUSERNAME
+module load velvet
+```
+
+Now, 'go home':
+
+```
+cd ~
 ```
 
 
@@ -35,7 +45,6 @@ or simply type
 cd
 ```
 
-
 Create the assembly folder:
 
 ```
@@ -44,6 +53,8 @@ cd assembly
 mkdir velvet
 cd velvet
 ```
+
+####A first assembly
 
 Find a value of *k* (between 21 and 99) to start with, and record your choice in this google spreadsheet: [bit.ly/INFBIO1](bit.ly/INFBIO1). Run `velveth` to build the hash index (see below).
 
@@ -59,23 +70,27 @@ velveth||Build the Velvet index file|
 Build the index as follows:
 
 ```
-velveth ASM_NAME VALUE_OF_k \  
+velveth ASM_NAME VALUE_OF_K \  
 -short -separate -fastq \  
 /data/assembly/MiSeq_Ecoli_MG1655_50x_R1.fastq \  
 /data/assembly/MiSeq_Ecoli_MG1655_50x_R2.fastq  
 ```
 **NOTES** 
 
-* Change `ASM_NAME` to something else of your chosing
+* Change `ASM_NAME` to something else of your choosing
+* Change `VALUE_OF_K` to the value you have picked
 * The command is split over several lines by adding a space, and a `\` (backslash) to each line. This trick makes long commands more readable. If you want, you can write the whole command on one line instead.
 
 After `velveth` is finished, look in the new folder that has the name you chose. You should see the following files:
 
->`Log`  
->`Roadmaps`  
->`Sequences`  
+```
+Log
+Roadmaps
+Sequences
+```
 
-`Log` is a useful file, this is a useful reminder of what commands you typed to get this assembly result, useful for reproducing results later on. Sequences contains the sequences we put in, and `Roadmaps` contains the index you just created.
+
+The '`Log`' file has a useful reminder of what commands you typed to get this assembly result, for reproducing results later on. '`Sequences`' contains the sequences we put in, and '`Roadmaps`' contains the index you just created.
 
 Now we will run the assembly with default parameters:
 
@@ -106,8 +121,7 @@ The important files are:
 **Questions**
 
 * What k-mer did you use?
-* What is the N50 of an assembly with 7 contigs of sizes: 20, 9, 9, 6, 3, 2 and 1 long?
-* What is the N50 of *your* assembly?
+* What is the N50 of the assembly?
 * What is the size of the largest contig?
 * How many contigs are there in the `contigs.fa` file? Use `grep -c NODE contigs.fa`
 
@@ -135,20 +149,9 @@ The output shows:
 
 The *peak value* in this histogram can be used as a guide to the best k-mer value for `exp_cov`.
 
-**Questions:**
+**Question:**
 
 * What do you think is the approximate expected k-mer coverage for your assembly?
-* Convert this value from k-mer coverage into genome coverage (average number of times the genome was sequenced).
-
-The formula is:
-
-```
-   Ck * L   
--------------  = C  
- (L - k + 1)
-```
-
-Where Ck = k-mer coverage, L = read length, k = k-mer size for your assembly
 
 Now run velvet again, supplying the value for `exp_cov` (k-mer coverage, *not* genome coverage) corresponding to your answer:
 
@@ -161,7 +164,7 @@ velvetg ASM_NAME -exp_cov PEAK_K_MER_COVERAGE
 
 ####Setting *cov_cutoff*
 
-You can also clean up the graph by removing low-frequency nodes from the *de Bruijn* graph using the `cov_cutoff` parameter. This will often result in better assemblies, but setting the cut-off too high will also result in losing bases. Using the histogram from previously, estimate a good value for `cov_cutoff`.
+You can also clean up the graph by removing low-frequency nodes from the *de Bruijn* graph using the `cov_cutoff` parameter. Low-frequency nodes can result from sequencing errors, or from parts of the genome with very little sequencing coverage. Removing them will often result in better assemblies, but setting the cut-off too high will also result in losing useful parts of the assembly. Using the histogram from previously, estimate a good value for `cov_cutoff`.
 
 ```
 velvetg ASM_NAME -exp_cov YOUR_VALUE -cov_cutoff YOUR_VALUE  

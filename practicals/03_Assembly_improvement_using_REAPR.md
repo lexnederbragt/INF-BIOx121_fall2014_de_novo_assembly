@@ -25,6 +25,7 @@ reapr pipeline ASSEMBLY.FASTA bwa/map_mp.sorted.bam reapr_out >reapr.out 2>&1
 
 ####REAPR output
 * The `reapr_out` folder and the folder `reapr_out/00.Sample` has a few PDFs that may be of interest
+* The file `05.summary.report.txt` has a lot of information an what REAPR did with the assembly. Error-free bases have at least 5X perfect and unique coverage of paired end reads. For more information, check the REAPR manual.
 * The file `04.break.broken_assembly_bin.fa` is a revised version of *only those* scaffolds from the assembly that were broken at places REAPR determined an error
 * The file `04.break.broken_assembly.fa` is a revised version of the assembly, with all scaffolds, whether they were broken or not
 * Finally, There is a gff file with the detected errors called `03.score.errors.gff.gz`. You can add this file to the browser, but it needs a small modification: all spaces in the file need to be replaced by underscores (otherwise only the first 'word' of each line will be shown in the browser). For this, we use the tool `zcat` to extract the information of the compressed file, and pipe the text into the `sed` program to replace all spaces with the `_` sign:
@@ -34,3 +35,4 @@ zcat 03.score.errors.gff.gz |sed 's/ /_/g' >03.score.errors_nospaces.gff
 ```
 You can now add the `03.score.errors_nospaces.gff` file to the browser (after downloading it).
 
+**NOTE** please log your results in the spreadsheet at [http://bit.ly/INFBIO2](http://bit.ly/INFBIO2).
