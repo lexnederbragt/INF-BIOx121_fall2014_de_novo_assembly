@@ -209,10 +209,13 @@ velvetg ASM_NAME2 -exp_cov auto \
 
 ####Scaffold and contig metrics
 
-The sequences in the `contigs.fa` file are actually scaffolds. Use the `assemblathon_stats.pl` script to generate metrics for this, and all following assemblies.
+The sequences in the `contigs.fa` file are actually scaffolds.  
+Use the `assemblathon_stats.pl` script to generate metrics for this, and all following assemblies.
+
 
 
 **The assemblathon stats script**  
+
 The assemblathon [www.assemblathon.org](www.assemblathon.org) used a perl script to obtain standardized metrics for the assemblies that were submitted. Here we use (a slightly modified version of) this script. It takes the size of the genome, and one sequence fasta file as input. The script breaks the sequences into contigs when there are 20 or more N’s, and reports all sorts of metrics.
 
 
@@ -265,7 +268,9 @@ Relevant columns are:
 
 Knowing this, we can use the `awk` command to select lines for contigs at least 1kb, with k-mer coverage greater than 60:
 
-`awk '($2>=1000 && $6>=60)' stats.txt`
+```
+awk '($2>=1000 && $6>=60)' stats.txt
+```
 
 `awk` is an amazing program for tabular data. In this case, we ask it to check that column 2 ($2, the length) is at least 1000 and column 6 ($6, coverage) at least 60. If this is the case, awk will print the entire line. See [http://bit.ly/QjbWr7](http://bit.ly/QjbWr7) for more information on awk.
 
@@ -300,9 +305,6 @@ We use auto values for velvetg because the addition of new reads will change the
 velvetg ASM_NAME3 -cov_cutoff auto -exp_cov auto
 ```
 
-**TIP**
-Some mate pair libraries have a significant amount of paired end reads present as a by-effect of the library preparation. This may generate misassemblies. If this is the case for your data, add the `-shortMatePaired2 yes` to let Velvet know it.
-
 **Questions:**
 
 * What is the N50 of this assembly?
@@ -310,6 +312,9 @@ Some mate pair libraries have a significant amount of paired end reads present a
 * How many bases are in gaps?
 * What did velvet estimate for the insert length of the paired-end reads, and for the standard deviation? Use the last mention of this in the velvet output.
 * And for the mate-pair library?
+
+**TIP**
+Some mate pair libraries have a significant amount of paired end reads present as a by-effect of the library preparation. This may generate misassemblies. If this is the case for your data, add the `-shortMatePaired2 yes` to let Velvet know it.
 
 Make a copy of the contigs file and call it `velvet_pe+mp.fa`
 
