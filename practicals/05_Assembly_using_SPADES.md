@@ -30,6 +30,12 @@ Other parameters:
 
 ####Setting up the assembly
 
+To enable SPAdes, run:
+
+```
+module load spades
+```
+
 First, create a new folder called `/usit/abel/u1/YOUR_USERNAME/assembly/spades` and `cd` into it.  
 We will save the output from the command using `>spades.out` in a file to be able to follow progress. `2>&1` makes sure any error-messages are written to the same file.
 Run the assembly as follows:
