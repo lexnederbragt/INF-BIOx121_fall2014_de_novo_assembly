@@ -56,7 +56,7 @@ cd velvet
 
 ####A first assembly
 
-Find a value of *k* (between 21 and 99) to start with, and record your choice in this google spreadsheet: [bit.ly/INFBIO1](bit.ly/INFBIO1). Run `velveth` to build the hash index (see below).
+Find a value of *k* (between 21 and 99) to start with, and record your choice in this google spreadsheet: [bit.ly/INFBIO1](http://bit.ly/INFBIO1). Run `velveth` to build the hash index (see below).
 
 Program|Options|Explanation
 -------|-------|-------------
