@@ -52,7 +52,7 @@ spades.py -t 2 -k 21,33,55,77 --careful --memory 33 \
 --pe1-1 /data/assembly/MiSeq_Ecoli_MG1655_110721_R1.fastq \
 --pe1-2 //data/assembly/MiSeq_Ecoli_MG1655_110721_R2.fastq \
 --pacbio /data/assembly/Ecoli_R7_MinION.fasta \
-ASM_NAME >spades.out 2>&1
+-o ASM_NAME >spades.out 2>&1
 ```
 
 **For paired end Illumina with Illumina mate Pairs:**
