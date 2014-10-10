@@ -74,7 +74,7 @@ Repeat the `bwa mem` and `samtools` commands above, but:
 ####Plotting the insert size distribution
 Since we know know where the pairs of reads map, we can obtain he distance between them. That information is stored in the SAM/BAM outour in the 9th column, 'TLEN' (observed Template LENgth).
 
-We will use python, and the python modules `pysam` and `matplotlib` to plot the distribution of insert sizes for a subset of the alignments. All this we will do in an IPython notebook, and interactive python web-based document with live coding and plotting of results.
+We will use python, and the python modules `pysam` and `R` (through the python `rpy2` module) to plot the distribution of insert sizes for a subset of the alignments. This we will do in another IPython notebook
 
 * Copy the notebook file `/data/assembly/Plot_insertsizes.ipynb` to the folder with the BAM files
 * In the terminal, `cd` to the same folder
@@ -93,7 +93,7 @@ We will use python, and the python modules `pysam` and `matplotlib` to plot the 
 
 When you are done with the IPython notebook:
 
-* Check that you have one or more PDFs with the plotting results
+* If you want to save the figures, copy them from the notebook into another program
 * Save the notebook
 * Close the browser windows
 * In the terminal where you started IPython notebook, click ctrl-c and confirm.
@@ -105,7 +105,7 @@ For this part, we will use Integrative Genomics Viewer (IGV), a genome browser d
 **NOTE** you may need to install IGV first (MAC and Windows users), in that case go through the instructions at [http://www.broadinstitute.org/igv/](http://www.broadinstitute.org/igv/) and install it in your home area on the PC/MAC.
 
 * Download the assembly `fasta` file and the `bam` and `bam.bai` files to the local hard disk of the PC/Mac you are using, see the instructions on the course wiki
-* **On the PC** (*NOT* on bioinfcourse.hpc.uio.no) start the IGV program by typing `igv.sh` (MAC and Linux) or opening the program from the start explorer (Windows)
+* **On the PC** (*NOT* on bioinfcourse.hpc.uio.no) start the IGV program by typing `igv.sh` (Linux), opening the program from the start explorer (Windows), or double clicking on the `igv.command` file (Mac)
 * Choose `Genomes --> Load Genome from File…` (**NB** not File --> Load from File...)
 * Select the fasta file with your assembly (**NB** the same file as you used for mapping the reads against!)
 
