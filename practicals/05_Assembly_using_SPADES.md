@@ -79,6 +79,13 @@ tail -f spades.out
 * contigs for each individual k-mer assembly
 * final `contigs.fasta` and `scaffolds.fasta` (which are identical)
 
+You can have a look at the lengths of the largest sequence(s) with
+
+```
+fasta_length contigs.fasta |sort -nr |less
+```
+
+
 ####Re-using error-corrected reads
 
 Once you have run SPADES, you will have files with the error-corrected reads in `spades_folder/corrected/`. There will be one file for each input file, and one additional one for unpaired reads (where during correction, one of the pairs was removed from the dataset). Instead of running the full SPADES pipeline for your next assembly, you could add the error-corrected reads from the previous assembly. This will save time by skipping the error-correction step. I suggest to not include the files with unpaired reads.

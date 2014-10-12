@@ -84,6 +84,12 @@ In order to have use the final assembly, uncompress the ´polished_assembly.fast
 unzip polished_assembly.fasta.gz
 ```
 
+You can have a look at the lengths of the largest sequence(s) with
+
+```
+fasta_length polished_assembly.fasta |sort -nr |less
+```
+
 ###Next steps
 As for the previous assemblies, you could map reads back to the assembly, run reapr and visualise in the browser. Is the assembly error-less?
 
