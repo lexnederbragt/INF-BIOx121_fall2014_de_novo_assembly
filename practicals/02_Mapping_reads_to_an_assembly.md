@@ -78,7 +78,7 @@ We will use python, and the python modules `pysam` and `R` (through the python `
 
 * Copy the notebook file `/data/assembly/Plot_insertsizes.ipynb` to the folder with the BAM files
 * In the terminal, `cd` to the same folder
-* Open a new terminal window (log in to the server again) for running the IPython notebook from
+* Open a new terminal window (log in to the server again) for running the IPython notebook from and in it, `cd` to the folder with the BAM files
 * See the instructions for how to start the IPython notebook on the wiki at [https://wiki.uio.no/projects/clsi/index.php/INF-BIOX121_H14_RStudio_IPython](https://wiki.uio.no/projects/clsi/index.php/INF-BIOX121_H14_RStudio_IPython)
 * After a little bit, your webbrowser will start with a new tab labelled `IPython dashboard`, and the notebook `Plot_insertsizes` listed
 * Click on the notebook name, it will open in a new tab
