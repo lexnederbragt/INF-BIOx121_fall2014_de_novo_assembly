@@ -81,7 +81,7 @@ The `data` folder contains the most important output:
 In order to have use the final assembly, uncompress the ´polished_assembly.fasta.gz´ file like this:
 
 ```
-unzip polished_assembly.fasta.gz
+gunzip polished_assembly.fasta.gz
 ```
 
 You can have a look at the lengths of the largest sequence(s) with

@@ -105,7 +105,7 @@ For this part, we will use Integrative Genomics Viewer (IGV), a genome browser d
 
 **NOTE** you may need to install IGV first (MAC and Windows users), in that case go through the instructions at [http://www.broadinstitute.org/igv/](http://www.broadinstitute.org/igv/) and install it in your home area on the PC/MAC.
 
-* Download the assembly `fasta` file and the `bam` and `bam.bai` files to the local hard disk of the PC/Mac you are using, see the instructions on the course wiki
+* Download the assembly `fasta` file and the `bam` and `bam.bai` files to the local hard disk (e.g., in a folder on the Desktop) of the PC/Mac you are using, see the instructions on the course wiki. 
 * **On the PC** (*NOT* on bioinfcourse.hpc.uio.no) start the IGV program by typing `igv` (Linux), opening the program from the start explorer (Windows), or double clicking on the `igv.command` file (Mac)
 * Choose `Genomes --> Load Genome from File…` (**NB** not File --> Load from File...)
 * Select the fasta file with your assembly (**NB** the same file as you used for mapping the reads against!)
@@ -130,7 +130,7 @@ Adding tracks to the browser is as simple as uploading a new file:
 It would be convenient to be able to see the location of gaps in the browser. For this purpose run the following command (e.g., in the folder with the `bwa` results). we will use 10 bases as minimum gap length: `-m 10`
 
 ```
-scaffoldgap2bed.py -i ../<assembly.fasta> -m 10 >gaps.bed
+scaffoldgap2bed.py -i ../ASSEMBLY.FASTA -m 10 >gaps.bed
 ```
 
 This will create a BED file with locations of the gaps. 
