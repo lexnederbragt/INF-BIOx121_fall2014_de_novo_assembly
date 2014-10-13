@@ -72,12 +72,13 @@ Repeat the `bwa mem` and `samtools` commands above, but:
 * change the output name to `map_mp.sorted`
 
 ####Plotting the insert size distribution
-Since we know know where the pairs of reads map, we can obtain he distance between them. That information is stored in the SAM/BAM outour in the 9th column, 'TLEN' (observed Template LENgth).
+Since we know know where the pairs of reads map, we can obtain he distance between them. That information is stored in the SAM/BAM output in the 9th column, 'TLEN' (observed Template LENgth).
 
 We will use python, and the python modules `pysam` and `R` (through the python `rpy2` module) to plot the distribution of insert sizes for a subset of the alignments. This we will do in another IPython notebook
 
 * Copy the notebook file `/data/assembly/Plot_insertsizes.ipynb` to the folder with the BAM files
 * In the terminal, `cd` to the same folder
+* Open a new terminal window (log in to the server again) for running the IPython notebook from
 * See the instructions for how to start the IPython notebook on the wiki at [https://wiki.uio.no/projects/clsi/index.php/INF-BIOX121_H14_RStudio_IPython](https://wiki.uio.no/projects/clsi/index.php/INF-BIOX121_H14_RStudio_IPython)
 * After a little bit, your webbrowser will start with a new tab labelled `IPython dashboard`, and the notebook `Plot_insertsizes` listed
 * Click on the notebook name, it will open in a new tab
